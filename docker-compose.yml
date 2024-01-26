@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  movienight:
+    image: stuartfreeman/movienight:latest
+    ports:
+      - 8089:8089
+      - 1935:1935
+    volumes:
+      - movienight-data:/data
+      - /srv/dockervols/movienight/settings.json:/data/config/settings.json
+
+volumes:
+  movienight-data:
